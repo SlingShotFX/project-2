@@ -58,7 +58,7 @@ jobs:
 
       - name: Verify AIDL Installation
         run: |
-          $ANDROID_HOME/build-tools/29.0.0/aidl --help
+          $ANDROID_HOME/build-tools/33.0.0/aidl --help
         shell: bash
 
       - name: Get Date
