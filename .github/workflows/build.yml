@@ -19,7 +19,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.8'
+          python-version: '3'
 
       - name: Install dependencies
         run: |
@@ -51,14 +51,14 @@ jobs:
         run: |
           set -e
           $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_HOME --update || { echo 'SDK update failed'; exit 1; }
-          $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_HOME "build-tools;30.0.3" "platforms;android-30" || { echo 'SDK package installation failed'; exit 1; }
+          $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_HOME "build-tools;29.0.0" "platforms;android-29" || { echo 'SDK package installation failed'; exit 1; }
           $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_HOME "extras;android;m2repository" "extras;google;m2repository" || { echo 'Extras installation failed'; exit 1; }
-          $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_HOME "platform-tools" "emulator" "system-images;android-30;google_apis;x86_64" || { echo 'Platform tools/emulator installation failed'; exit 1; }
+          $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_HOME "platform-tools" "emulator" "system-images;android-29;google_apis;x86_64" || { echo 'Platform tools/emulator installation failed'; exit 1; }
         shell: bash
 
       - name: Verify AIDL Installation
         run: |
-          $ANDROID_HOME/build-tools/30.0.3/aidl --help
+          $ANDROID_HOME/build-tools/29.0.0/aidl --help
         shell: bash
 
       - name: Get Date
