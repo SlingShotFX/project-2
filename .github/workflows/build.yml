@@ -19,14 +19,14 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3'
+          python-version: '3.12'
 
       - name: Install dependencies
         run: |
           sudo apt update && sudo apt install -y \
             build-essential ccache git libncurses5 libncurses5-dev libtiff5-dev libjpeg8-dev zlib1g-dev \
             libfreetype6-dev liblcms2-dev libwebp-dev libffi-dev \
-            openjdk-8-jdk unzip zip wget python3-distutils
+            openjdk-8-jdk unzip zip wget python3-setuptools
           pip install --upgrade cython buildozer packaging
         shell: bash
 
