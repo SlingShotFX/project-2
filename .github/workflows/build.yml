@@ -26,8 +26,8 @@ jobs:
           sudo apt update && sudo apt install -y \
             build-essential ccache git libncurses5 libncurses5-dev libtiff5-dev libjpeg8-dev zlib1g-dev \
             libfreetype6-dev liblcms2-dev libwebp-dev libffi-dev \
-            openjdk-8-jdk unzip zip wget python3-setuptools
-          pip install --upgrade cython buildozer packaging
+            openjdk-8-jdk unzip zip wget
+          pip install --upgrade setuptools cython buildozer packaging
         shell: bash
 
       - name: Install Android SDK tools
